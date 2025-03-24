@@ -1,18 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BrandController;
+use App\Http\Controllers\CategoryController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
-
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/Brandlist',[BrandController::class,'Brandlist']);
+Route::get('/Categorylist',[CategoryController::class,'Categorylist']);
+Route::get('/ListProductByCategory/{category_id}',[CategoryController::class,'ListProductByCategory']);
+Route::get('/ListProductByBrand/{brand_id}',[BrandController::class,'ListProductByBrand']);
