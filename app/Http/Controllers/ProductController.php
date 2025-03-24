@@ -12,8 +12,9 @@ use Illuminate\Routing\Controller;
 
 class ProductController extends Controller
 {
-    public function  ListProductByCategory(Request $request): JsonResponse
+    public function  ListProductByCategory(Request $request)
     {
+       
        $data=Product::where('category_id',$request->category_id)->get();
        return ResponseHelper::Out('success',$data,200);
     }
